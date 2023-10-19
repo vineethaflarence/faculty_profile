@@ -1,0 +1,142 @@
+body{
+    background-color: white;
+    margin:0;
+    padding:0;
+    }
+    .background_pic {
+        position: relative;
+        height: 35vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+   }
+.background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('background.jpg');
+        background-size: cover;
+        filter: blur(5px); /* Adjust the blur intensity as needed */
+        z-index: -1;
+    }
+ 
+
+.logo{
+width:250px;
+margin-left:40px;
+}
+
+.nav-link{
+ color: wheat;
+ font-weight: 600;
+  font-size: 14px;
+  margin-left:20px;
+  margin-right:20px;
+ font-family: 'Times New Roman', Times, serif;
+    }
+.nav-link:hover{
+  color: whitesmoke;
+ }
+.container-mainscreen{
+background-color: transparent;
+background-size: cover;
+height:auto;
+width:100%;
+padding: 20px;
+}
+.name{
+font-size: 30px;
+font-family: 'Times New Roman', Times, serif;
+color:rgb(40, 39, 41);
+
+}
+.info{
+font-size: 18px;
+font-family: 'Times New Roman', Times, serif;
+color:rgb(40, 39, 41);
+margin-top:10px;
+}
+
+.line{
+width:100px;
+border:1px solid rgb(40, 39, 41);
+}
+.heading{
+font-family: 'Libre Baskerville', serif;
+font-weight:bold;
+font-size:40px;
+}
+.heading-sub{
+font-family: 'Libre Baskerville', serif;
+font-size:12px;
+font-weight: bold;
+}
+
+@media (max-width: 768px) {
+.background_pic {
+    height: 40vh;
+}
+
+}
+
+.read-btn{
+background-color: wheat;
+
+}
+
+.box_about {
+        flex: 0 0 calc(33.3333% - 20px);
+        margin-right: 20px;
+    }
+.box_about:last-child {
+        margin-right: 0;
+    }
+.about-sections {
+margin-bottom: 7%;
+}
+.about-section-title {
+margin-bottom: 16px;
+font-size: 23px;
+font-weight: 600;
+font-family: 'Times New Roman', Times, serif;
+
+}
+.inner-span {
+font-size: 14px;
+letter-spacing: 1px;
+font-weight: 700;
+padding: 8px 20px;
+/* margin: 0 0 15px 0; */
+background: #b8b9b6;
+color: #050505;
+display: inline-block;
+text-transform: uppercase;
+border-radius: 50px;
+font-family: 'Times New Roman', Times, serif;
+box-shadow: 2px 2px 2px black;
+}
+
+.brief-bio{
+font-family: 'Times New Roman', Times, serif;
+font-size: 18px;
+}
+.year-section {
+background: #171717;
+padding: 2px ;
+color: hsl(0, 0%, 89%);
+width: 133px;
+text-align: center;
+
+}
+.about-experience {
+margin-bottom: 15px;
+}
+.about-work{
+position: relative;
+width: 100%;
+padding-right: 15px;
+padding-left: 15px;
+}

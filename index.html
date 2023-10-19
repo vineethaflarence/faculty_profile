@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>Student Template</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Domine&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font: 400 15px/1.8 "Lato", sans-serif;
+            color: #777;
+            
+        }
+
+        .container-mainscreen {
+            position: relative;
+            opacity: 0.75;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    .name-overlay{
+        display: inline-block;
+    vertical-align: middle; /* This aligns the images vertically in the middle */
+    margin-right: 20px;
+    }
+
+        .container-mainscreen {
+            
+            min-height: 60%;
+        }
+
+        .profile_pic {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #about-me,#About-me-more,#research, #event,#teaching,#talks{
+            display: none;
+            padding: 20px;
+        }
+        .more-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1024px) {
+            .container-mainscreen {
+                background-attachment: scroll;
+            }
+        }
+
+        .research-title {
+            font-size: 25px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+                'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .research-info, .about-work {
+            color:rgb(29, 26, 26);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+                'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+/* Define general styles for your footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.contact {
+    flex: 1; /* Equal-width columns */
+    padding: 10px;
+}
+.contact1{
+    flex: 1; /* Equal-width columns */
+    padding: 10px; 
+}
+/* Use media queries to adjust styles for smaller screens */
+@media screen and (max-width: px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact, .contact1 {
+        margin: 10px 0;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .footer {
+        margin-top:10px;
+        padding: 10px; /* Increase padding for more spacing */
+    }
+
+    .contact {
+        flex: 1; /* Equal-width columns */
+        padding: 10px;
+        transform: translateX(5%); /* Increase padding for wider content */
+    }
+.contact1{
+    flex: 1; /* Equal-width columns */
+        padding: 10px;
+        transform: translateX(50%);
+}
+}
+   
+/* Add any additional styling as needed for different screen sizes */
+
+
+    </style>
+    <script>
+        function showAboutMe() {
+            // Hide container-mainscreen and show the about-me section
+            document.getElementById('container-mainscreen-home').style.display = 'none';
+            document.getElementById('about-me').style.display = 'block';
+            document.getElementById('About-me-more').style.display = 'block';
+            document.getElementById('research').style.display = 'none';
+            document.getElementById('event').style.display = 'none';
+            document.getElementById('teaching').style.display = 'none';
+            document.getElementById('talks').style.display = 'none';
+        }
+
+        function showHome() {
+        // Show container-mainscreen-home and hide the about-me section
+        document.getElementById('container-mainscreen-home').style.display = 'block';
+        document.getElementById('about-me').style.display = 'none';
+        document.getElementById('About-me-more').style.display = 'none';
+        document.getElementById('research').style.display = 'none';
+        document.getElementById('event').style.display = 'none';
+        document.getElementById('teaching').style.display = 'none';
+        document.getElementById('talks').style.display = 'none';
+        document.getElementById('home-link').style.color = 'white';
+        document.getElementById('research-link').style.color = 'wheat';
+        document.getElementById('event-link').style.color = 'wheat';
+        document.getElementById('teaching-link').style.color = 'wheat';
+        document.getElementById('talks-link').style.color = 'wheat';
+    }
+    function showresearch(){
+        document.getElementById('container-mainscreen-home').style.display = 'none';
+        document.getElementById('about-me').style.display = 'none';
+        document.getElementById('About-me-more').style.display = 'none';
+        document.getElementById('research').style.display = 'block';
+        document.getElementById('event').style.display = 'none';
+        document.getElementById('teaching').style.display = 'none';
+        document.getElementById('talks').style.display = 'none';
+        document.getElementById('home-link').style.color = 'wheat';
+        document.getElementById('research-link').style.color = 'white';
+        document.getElementById('event-link').style.color = 'wheat';
+        document.getElementById('teaching-link').style.color = 'wheat';
+        document.getElementById('talks-link').style.color = 'wheat';
+    }
+    function showevent(){
+        document.getElementById('container-mainscreen-home').style.display = 'none';
+        document.getElementById('about-me').style.display = 'none';
+        document.getElementById('About-me-more').style.display = 'none';
+        document.getElementById('research').style.display = 'none';
+        document.getElementById('event').style.display = 'block';
+        document.getElementById('teaching').style.display = 'none';
+        document.getElementById('talks').style.display = 'none';
+        document.getElementById('home-link').style.color = 'wheat';
+        document.getElementById('research-link').style.color = 'wheat';
+        document.getElementById('event-link').style.color = 'white';
+        document.getElementById('teaching-link').style.color = 'wheat';
+        document.getElementById('talks-link').style.color = 'wheat';
+    }
+    function showteaching(){
+        document.getElementById('container-mainscreen-home').style.display = 'none';
+        document.getElementById('about-me').style.display = 'none';
+        document.getElementById('About-me-more').style.display = 'none';
+        document.getElementById('research').style.display = 'none';
+        document.getElementById('event').style.display = 'none';
+        document.getElementById('teaching').style.display = 'block';
+        document.getElementById('talks').style.display = 'none';
+        document.getElementById('home-link').style.color = 'wheat';
+        document.getElementById('research-link').style.color = 'wheat';
+        document.getElementById('event-link').style.color = 'wheat';
+        document.getElementById('teaching-link').style.color = 'white';
+        document.getElementById('talks-link').style.color = 'wheat';
+    }
+    function showtalks(){
+        document.getElementById('container-mainscreen-home').style.display = 'none';
+        document.getElementById('about-me').style.display = 'none';
+        document.getElementById('About-me-more').style.display = 'none';
+        document.getElementById('research').style.display = 'none';
+        document.getElementById('event').style.display = 'none';
+        document.getElementById('teaching').style.display = 'none';
+        document.getElementById('talks').style.display = 'block';
+        document.getElementById('home-link').style.color = 'wheat';
+        document.getElementById('research-link').style.color = 'wheat';
+        document.getElementById('event-link').style.color = 'wheat';
+        document.getElementById('teaching-link').style.color = 'wheat';
+        document.getElementById('talks-link').style.color = 'white';
+    }
+    
+
+    </script>
+</head>
+
+<body>
+    <div class="background_pic">
+        <div class="background-image"></div>
+            <div class=" d-flex flex-column text-center">
+            <div class="d-flex flex-row text-center">
+            <img src="iiit_logo_white.png" class="logo" >
+            <a href="http://ccnsb.iiit.ac.in/CCNSB/" class="picture;" target="_blank"><img src="cc.png" class="ccnsbpic" style=" width:100px;height:100px;"></a>
+        </div>
+        <div class="d-flex flex-column text-center">
+            <h1 class="heading" style="color: white;">Abhishek Deshpande, PhD</h1>
+            <h1 class="heading-sub" style="color: white;">Applied Mathematics</h1>
+        </div>
+    </div>
+</div>   
+            
+    </div>
+
+    <nav class="navbar navbar-expand-lg" style="background-color:black;">
+        <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="myNavbar">
+            <ul class="navbar-nav menu mx-auto">
+                <li class="nav-item"><a id="home-link" class="nav-link" href="#home" onclick="showHome()">Home</a></li>
+                <li class="nav-item"><a id="research-link" class="nav-link" href="#research" onclick="showresearch()">Research</a></li>
+                <li class="nav-item"><a id="event-link" class="nav-link" href="#event" onclick="showevent()">Events</a></li>
+                <li class="nav-item"><a id="teaching-link" class="nav-link" href="#teaching" onclick="showteaching()">Teaching</a></li>
+                <li class="nav-item"><a id="talks-link" class="nav-link" href="#talks" onclick="showtalks()">Invited Talks</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="container-mainscreen-home" class="container-mainscreen">
+        <div class="home-conatiner row justify-content-center align-items-center" id="home">
+            <div class="col-md-4 col-sm-12 mt-5 text-center">
+                <img src="profile-pic.jpg" class="img-responsive">
+            </div>
+            <div class="col-md-8 col-sm-12 mt-5">
+                <h3 style="color:rgb(29, 25, 25)">ABHISHEK DESHPANDE</h3>
+                <div class="line"></div>
+                <p class="info">I have done Ph.D in Applied Mathematics (Imperial College London), now am working as an
+                    Assistant Professor in the Center for Computational Natural Science and Bioinformatics at International
+                    Institute of Information Technology (IIIT Hyderabad), India.</p>
+                <button class="read_btn" id="readMorebtn" onclick="showAboutMe()" style="color:black;">Read More</button>
+            </div>
+        </div>
+    </div>
+    <div id="about-me" class="container">
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8 col-xs-12 mt-4">
+              <h3 class="about-section-title"><span class="inner-span">Research Interests</span></h3>
+                <br>
+                <p class="research-info">Mathematical biology, Dynamical systems, Chemical reaction networks, Retroactivity and
+                    signal transduction in enzymatic pathways.</p>
+                <p class="research-info">In particular, my research revolves around</p>
+                <ul>
+                    <li class="research-info">Analyzing polynomial dynamical systems arising from biochemical networks. Reaction
+                        networks can be visualized as finite graphs embedded in Euclidean space. The key idea is to relate
+                        the dynamics of the reaction network with its underlying structure.</li>
+                    <li class="research-info">Reaction networks for inference and computation. The idea here is to exploit the dynamics
+                        of reaction networks for implementing algorithms in machine learning.</li>
+                    <li class="research-info">Elucidating the relationship between retroactivity, flux and signal strength in biological
+                        enzymatic pathways like futile cycles, MAPK cascades.</li>
+                </ul>
+               </div>
+            </div>
+        </div>
+        <div id="About-me-more" class="container">
+        <div class="row justify-content-center mt-4">
+              <div class="col-md-8 col-xs-12 mt-4">
+                <h3 class="about-section-title"><span class="inner-span">Professional trajectory</span></h3>
+                <br>
+                  <div class="bio-graphy">
+                      <div class="about-experience row">
+                          <div class="col-md-3">
+                              <div class="year-section">2021- Current: </div>
+                          </div>
+                          <div class="about-work col-md-9">Assistant Professor, Center for Computational Natural Science and
+                              Bioinformatics, IIIT Hyderabad, India
+                          </div>
+                      </div>
+                      <div class="about-experience row">
+                          <div class="col-md-3">
+                              <div class="year-section">2018 - 2021: </div>
+                          </div>
+                          <div class="about-work col-md-9">Van Vleck Visiting Assistant Professor, University of Wisconsin
+                              Madison (Postdoctoral mentor: Gheorghe Craciun)</div>
+                      </div>
+                      <div class="about-experience row">
+                          <div class="col-md-3">
+                              <div class="year-section">2014 - 2018:</div>
+                          </div>
+                          <div class="about-work col-md-9">PhD, Imperial College London (Advisors: Thomas Ouldridge, Manoj
+                              Gopalkrishnan and Nick Jones)</div>
+                      </div>
+                      <div class="about-experience row">
+                          <div class="col-md-3">
+                              <div class="year-section">2009 - 2014:</div>
+                          </div>
+                          <div class="about-work col-md-9">B.Tech in Computer Science and M.S in Computational Natural Science,
+                              IIIT Hyderabad, India. (Advisors: Harjinder Singh and Indranil Chakrabarty)
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+      <div id="research" class="container">
+        <div class="row justify-content-center mt-4">
+              <div class="col-md-8 col-xs-12 mt-4">
+                <h3 class="about-section-title"><span class="inner-span">Research</span></h3>
+                <br>
+                <h4><strong>Publications</strong></h4>
+                <ol>
+                    <li>Gheorghe Craciun, <strong>Abhishek Deshpande</strong>, Jiaxin Jin: <a href="https://arxiv.org/abs/2306.13241">On the Connectivity of the Disguised Toric Locus of a Reaction Network</a> (submitted)</li>
+                    <li>Gheorghe Craciun, <strong>Abhishek Deshpande</strong>, Jiaxin Jin: <em><a href="https://arxiv.org/abs/2305.00299">A lower bound on the dimension of the Disguised Toric Locu</a>s</em> (submitted)</li>
+                    <li>Gheorghe Craciun, <strong>Abhishek Deshpande</strong>, Jiaxin Jin: <em><a href="https://arxiv.org/abs/2303.09445">Weakly reversible deficiency one realizations of polynomial dynamical systems: an algorithmic perspective.</a></em> (submitted)</li>
+                    <li>Samay Kothari, <strong>Abhishek Deshpande</strong>: <a href="https://arxiv.org/abs/2303.08781"><em>Endotactic and strongly endotactic networks with infinitely many positive steady states.</em></a> (submitted)</li>
+                    <li>Gheorghe Craciun, <strong>Abhishek Deshpande</strong>, Jiaxin Jin: <em><a href="https://arxiv.org/abs/2302.13119">Weakly reversible single linkage class realizations of polynomial dynamical systems: an algorithmic perspective.</a></em>  (submitted)</li>
+                    <li><strong>Abhishek Deshpande</strong>. <em><a href="https://arxiv.org/abs/2205.00801">Source-only realizations, weakly reversible deficiency one networks and dynamical equivalence</a></em>. SIAM Journal on Applied Dynamical Systems 22 (2), 1502-1521.</li>
+                    <li>Yida Ding, <strong>Abhishek Deshpande</strong>, Gheorghe Craciun. <a href="https://arxiv.org/abs/2110.14486">Minimal invariant regions and minimal globally attracting regions for variable-k reaction systems</a>. Discrete and Continuous Dynamical Systems &#8211; B (2022).</li>
+                    <li>Gheorghe Craciun, <strong>Abhishek Deshpande: </strong><a href="https://arxiv.org/abs/2105.00088"><em>Homeostasis and injectivity: a reaction network perspective.</em></a> Journal of Mathematical Biology (2022).</li>
+                    <li>Gheorge Craciun, <strong>Abhishek Deshpande</strong>, Badal Joshi, Polly Y. Yu: <a href="https://arxiv.org/abs/2012.06033"><em>Autocatalytic systems and recombination: a reaction network perspective.</em></a> Mathematical Biosciences (2022)</li>
+                    <li>David F. Anderson, <strong>Abhishek Deshpande</strong>, Badal Joshi: <a href="https://arxiv.org/abs/2010.13290"><em>On reaction network implementations of neural networks. </em></a>Journal of Royal Society Interface, Vol. 18, Issue 177</li>
+                    <li>Yida Ding, <strong>Abhishek Deshpande</strong>, Gheorghe Craciun: <a href="https://arxiv.org/abs/2006.08735"><em>Minimal invariant regions and minimal globally attracting regions for toric differential inclusions.</em></a>  Advances in Applied Mathematics (2022).</li>
+                    <li>Gheorghe Craciun, <strong>Abhishek Deshpande</strong>, Hyejin Jenny Yeon: <a href="https://arxiv.org/abs/1910.05426"><em>Quasi-Toric Differential Inclusions.</em></a> Discrete and Continuous Dynamical Systems &#8211; B (2020).</li>
+                    <li>Gheorghe Craciun, <strong>Abhishek Deshpande: </strong><a href="https://arxiv.org/abs/1906.08384"><em>Endotactic Networks and Toric Differential Inclusions</em></a>, SIAM Journal on Applied Dynamical Systems (2020).</li>
+                    <li><strong>A</strong><strong>bhishek Deshpande</strong>,Thomas Ouldridge: <a href="https://arxiv.org/abs/1905.00555"><em>Optimizing enzymatic catalysts for rapid turnover of substrates with low enzyme sequestration.</em></a> Biological Cybernetics (2020).</li>
+                    <li>Indranil Chakrabarty, <strong>Abhishek Deshpande</strong>, Sourav Chatterjee: <a href="https://arxiv.org/abs/1410.7067"><em>Measurement Induced Randomness and State Merging.</em></a> International Journal of Quantum Information. 16, 1850018 (2018).</li>
+                    <li><strong>Abhishek Deshpande</strong>, Thomas Ouldridge: <a href="https://arxiv.org/abs/1708.01792"><em>High rates of fuel consumption are not required by insulating motifs to suppress retroactivity in biochemical circuits.</em></a> Engineering Biology 1(2), 86-89 (2017).</li>
+                    <li><strong>Abhishek Deshpande</strong>, Manoj Gopalkrishnan, Thomas Ouldridge, Nick Jones: <a href="https://arxiv.org/abs/1702.04950"><em>Designing the Optimal Bit: Balancing Energetic Cost, Speed and Reliability.</em></a> Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences. 473, 2204 (2017).</li>
+                    <li>Manoj Gopalkrishnan, Varshith Kandula, Praveen Sriram, <strong>Abhishek Deshpande</strong>, Bhaskaran Muralidharan: <a href="https://arxiv.org/abs/1602.00508"><em>Bayesian view of Single-Qubit Clocks, and an Energy versus Accuracy trade-off.</em></a>  Physical Review A. 96, 032339 (2017).</li>
+                    <li><strong>Abhishek Deshpande</strong>, Manoj Gopalkrishnan: <a href="https://arxiv.org/abs/1309.3957"><em>Autocatalysis in reaction networks.</em></a> Bulletin of Mathematical Biology 76, 2570-2595 (2014).</li>
+                    </ol>
+                     </div>
+  </div>
+      </div>
+      <div id="event" class="container">
+        <div class="row justify-content-center mt-4">
+              <div class="col-md-8 col-xs-12 mt-4">
+                <h3 class="about-section-title"><span class="inner-span">Event</span></h3>
+                <br>
+                <p><strong>Events I organized:</strong></p>
+                <p>With David Anderson and Gheorghe Craciun, I organised a Special Session on Connecting Network Structure and Behavior of Biological Interaction Systems as part of <a href="http://www.ams.org/meetings/sectional/2267_special.html">AMS Fall Sectional Meeting</a>, University of Wisconsin Madison (Sep. 14-15, 2019).</p>
+               <p>With David Anderson and Gheorghe Craciun, I organised the third Madison Workshop on Mathematics of Reaction Networks, University of Wisconsin Madison (Sep. 16-18, 2019).</p>
+               <p>&nbsp;</p>
+               <p><strong>Summer Schools/Workshops</strong></p>
+               <p>MSRI-MPI Leipzig Summer Graduate School on Algebraic Methods for Biochemical Reaction Networks: June 12 &#8211; 23, 2023<br />
+                  Max Planck Institute for Mathematics in the Sciences</p>
+                <p id="logo">Chemical Reaction Networks Summer School: June 24 &#8211; 28  2019 &#8211; Pragelato, Torino, Italy</p>
+
+                </div>
+                </div>
+                </div>
+                <div id="teaching" class="container">
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-md-8 col-xs-12 mt-4">
+                            <h3 class="about-section-title"><span class="inner-span">Teaching</span></h3>
+                            <br>
+                            <p>During Monsoon 2023, I  am teaching Computer programming, which meets at MWF 9.35 am &#8211; 10.30 am.</p>
+<p>During Spring 2022, I taught Nonlinear Dynamics, which meets at WS 10-11:30 am.</p>
+<p>During Monsoon 2022, I  taught Computer programming, which meets at TFS 10.40 am &#8211; 12.40 pm.</p>
+<p>During Monsoon 2022, I taught Mathematical Models in Biology, which meets at TF 8.30-10 am.</p>
+<p>During Spring 2022, I taught Nonlinear Dynamics, which meets at WS 10-11:30.</p>
+<p>During Fall 2021, I taught Mathematical Models in Biology, which meets at TF 9-10:30.</p>
+<p>In Spring 2021, I taught Linear Algebra and Differential Equations (MATH 320), which meets TR 2.30-3.45 pm.</p>
+<p>During Fall 2020, I taught Quantitative reasoning (Math 141), which met TR 2.30-3:45 pm.</p>
+<p>During Spring 2020, I taught Calculus (Math 211), which met TR 11-12:15 pm in 3650 Humanities and TR 2.30-3.45 pm in 6210 Humanities.</p>
+<p>During Fall 2019, I taught Applied Dynamical Systems, Chaos and Modeling (Math 415), which met TR 2.30-3.45 am in 360 Science Hall.</p>
+<p>During Spring 2019, I taught Linear Algebra and Differential Equations (Math 320, section 003), which met TR 9:30-10:45 am in Van Vleck B239.</p>
+<p>During Fall 2018, I taught Linear Algebra and Differential Equations (Math 320, sections 001 and 004), which met MWF 9.55-10.45 am in Van Vleck B130 and 2.25-3.15 pm in Soils 270.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+                </div>
+                    </div>
+                        </div>
+<div id="talks" class="container">
+     <div class="row justify-content-center mt-4">
+         <div class="col-md-8 col-xs-12 mt-4">
+                <h3 class="about-section-title"><span class="inner-span">Invited Talks</span></h3>
+                <br>
+                <div class="page" title="Page 3">
+                    <div class="layoutArea">
+                    <div class="column">
+                    <p><i><strong>Quasi-toric differential inclusions:</strong></i><strong> </strong>SIAM Conference on Applied Algebraic Geometry, (July 10 &#8211; 14, 2023), Eindhoven University of Technology, Eindhoven, Netherlands</p>
+                    <p><strong><i>Minimal invariant regions and minimal globally attract</i></strong><i><strong>ing regions for variable-k reaction systems:</strong> </i>SIAM Conference on Applications of Dynamical Systems, May 14-18, 2023, Portland, Oregon, United States</p>
+                    <p><strong><i>Minimal invariant regions and minimal globally attract</i></strong><i><strong>ing regions for variable-k reaction systems:</strong> </i>SIAM Annual meeting, (July 11 &#8211; 16, 2022), David L. Lawrence Convention Center, Pittsburgh, Pennsylvania, USA.</p>
+                    <p><strong><i>Autocatalytic systems and recombination: a </i></strong><i><strong>reaction network perspective:</strong> </i>Reaction Network Seminar, 24 February 2022, Politecnico di Torino/University of Copenhagen/University of Vienna.</p>
+                    <p><strong><i>Minimal invariant regions and minimal globally attract</i></strong><strong><i>ing regions for toric differential inclusions: </i></strong>SIAM Conference on Applied Algebraic Geometry, (August 16 &#8211; 20, 2021), Texas A &amp; M University, USA.</p>
+                    <p><em><strong>Quasi-toric differential inclusions:</strong></em> Seminar on Applied Mathematics, 9 March 2020, West Virginia University, Morgantown, West Virginia, United States of America.</p>
+                    <p><strong><i>Endotactic networks and toric differential inclusions: </i></strong>SIAM Conference on Applied Algebraic Geometry, (July 9 &#8211; 13, 2019), University of Bern, Bern, Switzerland.</p>
+                    <p><em><strong>The hypercycle,</strong> <strong>a reaction network perspective</strong>: </em>AMS Fall Sectional Meeting, University of Wisconsin Madison (Sept 14, 2019)</p>
+                    <p><strong><em>Biochemical switches</em></strong>, Applied and Computational Mathematics Seminar, University of Wisconsin Madison (Feb 1, 2019.</p>
+                    <p><strong><em>Autocatalysis in reaction networks</em></strong>, Middlesex University, London, United Kingdom (January 24 2018)</p>
+                    <p><strong><em>Catalysis in chemistry and biology</em></strong>, International Institute of Information Technology, Hyderabad, India (Jan 4, 2018)</p>
+                    <p><em><strong>Switches in chemical, biological and physical computation</strong></em>, Microsoft Research Cambridge (November 24, 2017</p>
+                    <p><strong><em>Designing the optimal: cost/speed/reliability tradeoff</em></strong>, Imperial College London SIAM Student Chapter, London, United Kingdom (Dec 16, 2015)</p>
+                    </div>
+                    </div>
+                    </div>
+                    <p>&nbsp;</p>
+         </div>
+     </div>
+</div>
+
+<div class="footer">
+    <div class="contact">
+        <a href="https://maps.app.goo.gl/UJfNweNW47WyEr219" target="_blank" style="color: white;"><i class="fa fa-map-marker" aria-hidden="true"><p style-="padding:5px;">B2-304 Vindhya, IIT Hyderabad,<br>Prol. CR Rao Road, Gachibowli,<br>Hyderabad 500 032</p></i>
+        &nbsp; &nbsp;
+        </a>
+    </div>
+    <div class="copyright text-center col-xs-12">
+        <p>© Copyright <strong><span>Abhishek Deshpande</span></strong><br>All Rights Reserved</p>
+    </div>
+    <div class="contact1">
+        <a href="mailto:abhishek.deshpande@t.ac.in" target="_blank" style="color: white;">
+            <i class="fa fa-envelope"></i>&nbsp;&nbsp; abhishek deshpande@t.ac.in
+        </a>
+        <br>
+        <a href="tel:+91 40 6653 1000" style="color: white;">
+            <i class="fa fa-phone"></i>&nbsp;&nbsp;+91 40 6653 1000
+        </a>
+    </div>
+</div>
+
+
+
+</body>
+</html>
